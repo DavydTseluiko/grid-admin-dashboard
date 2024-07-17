@@ -3,6 +3,8 @@
 :root {
   --blue-color: #1992d4;
   --white-color: #ffffff;
+  --white-svg: invert(99%) sepia(1%) saturate(4851%) hue-rotate(286deg)
+    brightness(114%) contrast(101%);
 }
 
 html {
@@ -50,7 +52,7 @@ body {
   font-family: "Roboto", sans-serif;
 
   display: grid;
-  grid-template-columns: 2.5fr 7.5fr;
+  grid-template-columns: minmax(185px, 2fr) 8fr;
 }
 
 .sidebar {
@@ -67,7 +69,21 @@ body {
 }
 
 .logo-title {
+  /* fz: min: 25, max: 35 */
+  font-size: clamp(1.5625rem, 0.0534rem + 2.439vw, 2.1875rem);
   font-weight: 700;
+}
+
+.logo-title a {
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-icon {
+  filter: var(--white-svg);
+  /* width: min: 30, max: 40 */
+  width: clamp(1.875rem, 0.3659rem + 2.439vw, 2.5rem);
+  margin-right: 10px;
 }
 
 .nav ul,
@@ -75,4 +91,22 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+
+.list-item > a,
+.feature-item > a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.list-item > a > img,
+.feature-item > a > img {
+  width: clamp(1.25rem, 0.6463rem + 0.9756vw, 1.5rem);
+  filter: var(--white-svg);
+}
+
+.list-item > a > span,
+.feature-item > a > span {
+  font-size: clamp(1.1875rem, 0.7348rem + 0.7317vw, 1.375rem);
 }
