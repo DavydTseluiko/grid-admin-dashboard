@@ -53,15 +53,17 @@ body {
 
   display: grid;
   grid-template-columns: minmax(185px, 2fr) 8fr;
+  grid-template-rows: 1fr 2fr;
 }
 
 .sidebar {
   padding: 15px;
 
+  grid-row: 1 / -1;
+
   font-size: 20px;
   color: var(--white-color);
   background-color: var(--blue-color);
-  height: 100vh;
 
   display: flex;
   flex-direction: column;
@@ -109,4 +111,25 @@ body {
 .list-item > a > span,
 .feature-item > a > span {
   font-size: clamp(1.1875rem, 0.7348rem + 0.7317vw, 1.375rem);
+}
+
+.header {
+  padding: 15px 30px;
+}
+
+.search-img,
+.bell-img {
+  width: 35px;
+}
+
+.pfp {
+  width: 45px;
+}
+
+.pfp-big {
+  width: 70px;
+}
+
+.line-break {
+  display: block;
 }
