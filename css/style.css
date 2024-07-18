@@ -226,10 +226,11 @@ body {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 30px;
   gap: 15px;
-  grid-auto-rows: 200px;
+  grid-auto-rows: 250px;
 }
 
 .main-title {
+  font-weight: 700;
   grid-column: 1 / -1;
 }
 
@@ -256,7 +257,7 @@ body {
   font-size: 14px;
   color: rgb(101, 101, 101);
 
-  max-height: 100px;
+  max-height: 130px;
   overflow: auto;
 }
 
@@ -272,3 +273,64 @@ body {
 .main-icons > * {
   width: 25px;
 }
+
+.main-right-top,
+.main-right-bottom {
+  display: grid;
+  grid-template-rows: 30px auto;
+  gap: 15px;
+}
+
+.main-right-top {
+  grid-template-rows: 30px auto auto;
+}
+
+.container {
+  background-color: var(--white-color);
+  padding: 50px 30px 45px 30px;
+
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.announcement-card {
+  position: relative;
+}
+
+.announcement-title {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.announcement-description {
+  font-size: 14px;
+  color: rgb(101, 101, 101);
+}
+
+.announcement-card:not(:last-of-type)::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  width: 100%;
+  border: 1px solid var(--gray-color);
+}
+
+.container.small {
+  padding: 30px;
+  gap: 0;
+  justify-content: space-between;
+}
+
+.trending-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.trending-user-description {
+  color: #8a8a8a;
+}
+
